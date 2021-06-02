@@ -1,0 +1,17 @@
+import java.io.Serializable;
+
+public class SchoolFootballClubs extends FootballClub implements Serializable {
+    private String schoolName;
+
+    public SchoolFootballClubs() {
+
+    }
+
+    public String getSchoolName() {
+        return schoolName;
+    }
+
+    public void setSchoolName(String schoolName) {
+        this.schoolName = schoolName;
+    }
+}

@@ -1,0 +1,66 @@
+<div class="mat-elevation-z8">
+
+  <!-- Router link to sort wins and retrieve arraylist back =    http://localhost:8080/allclubs/sortbywins   -->
+  <button mat-raised-button color="accent" class="sort-buttons" id="sortWins" (click)="retrieveWins()">Sort by Wins</button>
+
+   <!-- Router link to sort points and retrieve arraylist back =    http://localhost:8080/allclubs/sortbypoints    -->
+  <button mat-raised-button color="accent" class="sort-buttons" id="sortPoints" (click)="retrievePoints()">Sort by Points</button>
+
+   <!-- Router link to sort goals and retrieve arraylist back =    http://localhost:8080/allclubs/sortbygoals    -->
+  <button mat-raised-button color="accent" class="sort-buttons" id="sortGoals" (click)="retrieveGoals()">Sort by Goals</button>
+
+  <table  [dataSource]="data" mat-table class="full-width-table" matSort aria-label="Elements">
+
+    <!-- ClubName Column -->
+    <ng-container matColumnDef="clubName">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Club Name</th>
+      <td mat-cell *matCellDef="let row">{{row.clubName}}</td>
+    </ng-container>
+
+    <!-- Wins Column -->
+    <ng-container matColumnDef="numberOfWins">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Wins</th>
+      <td mat-cell *matCellDef="let row">{{row.numberOfWins}}</td>
+    </ng-container>
+
+    <!-- Losses Column -->
+    <ng-container matColumnDef="numberOfLosses">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Losses</th>
+      <td mat-cell *matCellDef="let row">{{row.numberOfLosses}}</td>
+    </ng-container>
+
+    <!-- Draws Column -->
+    <ng-container matColumnDef="numberOfDraws">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Draws</th>
+      <td mat-cell *matCellDef="let row">{{row.numberOfDraws}}</td>
+    </ng-container>
+
+    <!-- Goals Scored Column -->
+    <ng-container matColumnDef="numberOfGoalsScored">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Goals Scored</th>
+      <td mat-cell *matCellDef="let row">{{row.numberOfGoalsScored}}</td>
+    </ng-container>
+
+    <!-- Goals Received Column -->
+    <ng-container matColumnDef="numberOfGoalsReceived">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Goals Received</th>
+      <td mat-cell *matCellDef="let row">{{row.numberOfGoalsReceived}}</td>
+    </ng-container>
+
+    <!-- Points Column -->
+    <ng-container matColumnDef="numberOfClubPoints">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Points</th>
+      <td mat-cell *matCellDef="let row">{{row.numberOfClubPoints}}</td>
+    </ng-container>
+
+    <!-- Matches Played Column -->
+    <ng-container matColumnDef="numberOfMatchesPlayed">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Matches Played</th>
+      <td mat-cell *matCellDef="let row">{{row.numberOfMatchesPlayed}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+</div>

@@ -1,0 +1,19 @@
+.full-width-table {
+  width: 100%;
+}
+
+.searchField{
+  margin:20px;
+}
+
+.searchBtn{
+  background-color:#1f1f1f;
+  color:white;
+  border-radius: 5px;
+  margin:10px;
+}
+.resetBtn{
+  background-color:#1f1f1f;
+  color:white;
+  border-radius: 5px;
+}

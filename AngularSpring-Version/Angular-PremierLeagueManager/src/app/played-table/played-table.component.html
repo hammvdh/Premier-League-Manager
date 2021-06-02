@@ -1,0 +1,39 @@
+<div class="mat-elevation-z8">
+
+  <table [dataSource]="data" mat-table class="full-width-table" matSort aria-label="Elements">
+    <!-- Home Club Column -->
+    <ng-container matColumnDef="homeClub">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Home Club</th>
+      <td mat-cell *matCellDef="let row">{{row.homeClub.clubName}}</td>
+    </ng-container>
+
+    <!-- Home Club Goals Column -->
+    <ng-container matColumnDef="homeClubGoalsScored">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Home Club Goals</th>
+      <td mat-cell *matCellDef="let row">{{row.homeClubGoalsScored}}</td>
+    </ng-container>
+
+    <!-- Away Club Column -->
+    <ng-container matColumnDef="awayClub">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Away Club</th>
+      <td mat-cell *matCellDef="let row">{{row.awayClub.clubName}}</td>
+    </ng-container>
+
+    <!-- Date Played Column -->
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Date Played</th>
+      <td mat-cell *matCellDef="let row">{{row.date}}</td>
+    </ng-container>
+
+
+    <!-- Away Club Goals Column -->
+    <ng-container matColumnDef="awayClubGoalsScored">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Away Club Goals</th>
+      <td mat-cell *matCellDef="let row">{{row.awayClubGoalsScored}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+</div>
